@@ -1,0 +1,417 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 create database kart_customer;\
+\
+use kart_customer;\
+\
+create table customer(\
+Email varchar(50) primary key,\
+Name varchar(50),\
+Account_Type varchar(25),\
+Password varchar(50)\
+);\
+\
+insert into customer values('kumar@gmail.com','kumar','buyer','kumar123');\
+insert into customer values('sai@gmail.com','kumar','buyer','sai123');\
+\
+select * from customer;\
+\
+create database kart_address;\
+\
+use kart_address;\
+create table address(\
+address_id bigint primary key,\
+email varchar(50),\
+address varchar(25),\
+city varchar(50),\
+state varchar(50),\
+pincode bigint,\
+phonenumber bigint\
+);\
+\
+desc address;\
+\
+select * from address;\
+\
+insert into address values(4,"sai@gmail.com","guntur","mandapaka","andhra",534111,7416412641);\
+create database kart_products;\
+\
+use kart_products;\
+create table products(pid bigint primary key not null,\
+pname varchar(50),\
+pdescription varchar(100),\
+prating varchar(25),\
+pcategory varchar(25),\
+pprice bigint,\
+pcolour varchar(25),\
+pimage varchar(25),\
+pspecification varchar(50),\
+pfirstavailable varchar(25),\
+plastavailable varchar(25),\
+sid varchar(25),\
+sdiscount varchar(25),\
+squantity int,\
+sshippingcharges int\
+\
+);\
+desc products;\
+insert into products values(\
+    1001,\
+    "Asus Zenfone", \
+    "an economical phone by Asus", \
+     3.5, \
+    "Electronics",\
+    11599,\
+    "Black",\
+    "Electronics.jpg",\
+    "",\
+    "2012-09-17T00:00:00.000Z", \
+    "2017-09-17T00:00:00.000Z",\
+    'Asus@Seller',\
+        0.2,\
+        666,\
+        150\
+    );\
+  \
+  \
+  insert into products values(\
+    1002,\
+    "Redmi Note 2",\
+    "an economical phone by Xiaomi",\
+     4,\
+    "Electronics",\
+    8599,\
+    "Black",\
+    "Electronics.jpg",\
+    "", \
+    "2012-09-17T00:00:00.000Z", \
+    "2017-09-17T00:00:00.000Z",\
+    'Xiaomi@Seller',\
+        0.2,\
+        666,\
+        150\
+    );\
+  insert into products values(1003,\
+    "Moto G turbo",\
+    "an economical phone by Moto",\
+     4,\
+    "Electronics",\
+    13599,\
+    "Black",\
+    "Electronics.jpg",\
+    "",\
+    "2012-09-17T00:00:00.000Z",\
+    "2017-09-17T00:00:00.000Z",\
+    'Moto@Seller',\
+        0.2,\
+        666,\
+        150\
+    );\
+  insert into products values(1004,\
+    "Lenovo Vibe X3",\
+    "a high end phone by Lenovo",\
+     4.5,\
+    "Electronics",\
+    19999,\
+    "Black",\
+    "Electronics.jpg",\
+    "",\
+    "2012-09-17T00:00:00.000Z",\
+    "2017-09-17T00:00:00.000Z",\
+    'Lenovo@Seller',\
+        0.2,\
+        666,\
+        150\
+    );\
+  insert into products values(1005,\
+    "iphone 8 plus",\
+    "a high end phone by apple",\
+     4.9,\
+    "Electronics",\
+    19999,\
+    "Rose Gold",\
+    "Electronics.jpg",\
+    "",\
+    "2012-09-17T00:00:00.000Z",\
+    "2017-09-17T00:00:00.000Z",\
+    'Apple@Seller',\
+        0.2,\
+        666,\
+        150\
+    );\
+  insert into products values(1006,\
+    "Adidas Running Men Lite",\
+    "a pair of light weight running shoes by adidas",\
+     4,\
+    "Shoes",\
+    2599,\
+    "Blue",\
+    "Shoes.jpg",\
+    "",\
+	"2012-09-17T00:00:00.000Z",\
+	"2017-09-17T00:00:00.000Z",\
+    'Adidas@Seller',\
+        0.2,\
+        666,\
+        150\
+    );\
+  insert into products values\
+(1007,\
+    "Adidas Running Women Lite",\
+    "a pair of light weight running shoes by adidas",\
+     4,\
+     "Shoes",\
+    2599,\
+    "Pink",\
+    "Shoes.jpg",\
+    "",\
+	"2012-09-17T00:00:00.000Z",\
+	"2017-09-17T00:00:00.000Z",\
+    'Adidas@Seller',\
+        0.2,\
+        666,\
+        150\
+    );\
+  insert into products values(1008,\
+    "Adidas Running Men robust",\
+    "A pair of robust running shoes by adidas",\
+     4,\
+     "Shoes",\
+    3599,\
+    "Blue",\
+    "Shoes.jpg",\
+    "",\
+	"2012-09-17T00:00:00.000Z",\
+	"2017-09-17T00:00:00.000Z",\
+    'Adidas@Seller',\
+        0.2,\
+        666,\
+        150\
+    );\
+  insert into products values(1009,\
+    "Reebok training shoes",\
+    "A pair of light weight training shoes by Reebok",\
+     3,\
+     "Shoes",\
+    1599,\
+    "Grey",\
+    "Shoes.jpg",\
+    "",\
+	"2012-09-17T00:00:00.000Z",\
+	"2017-09-17T00:00:00.000Z",\
+    'Reebok@Seller',\
+        0.2,\
+        666,\
+        150\
+    );\
+  insert into products values(1010,\
+    "Nike Running Men Lite",\
+    "a pair of light weight running shoes by Nike",\
+     4.6,\
+     "Shoes",\
+    6599,\
+    "Green",\
+    "Shoes.jpg",\
+    "",\
+	"2012-09-17T00:00:00.000Z",\
+	"2017-09-17T00:00:00.000Z",\
+    'Nike@Seller',\
+        0.2,\
+        666,\
+        150\
+    );\
+  insert into products values(1011,\
+    "Computer Table by Zuari",\
+    "sunmica finished zuari computer table",\
+     4,\
+    "Furniture",\
+    8999,\
+    "Beige",\
+    "Furniture.jpg",\
+    "",\
+	"2012-09-17T00:00:00.000Z",\
+	"2017-09-17T00:00:00.000Z",\
+    'Zuari@Seller',\
+        0.2,\
+        666,\
+        150\
+    );\
+  insert into products values(1012,\
+    "Study Table by Zuari",\
+    "sunmica finished zuari study table",\
+     4.3,\
+    "Furniture",\
+    6999,\
+    "Coffee Brown",\
+    "Furniture.jpg",\
+    "",\
+	"2012-09-17T00:00:00.000Z",\
+	"2017-09-17T00:00:00.000Z",\
+    'Zuari@Seller',\
+        0.2,\
+        666,\
+        150\
+    );\
+  insert into products values(1013,\
+    "Dressing Table by Zuari",\
+    "sunmica finished zuari Dressing table",\
+     4,\
+    "Furniture",\
+    2599,\
+    "Beige",\
+    "Furniture.jpg",\
+    "",\
+	"2012-09-17T00:00:00.000Z",\
+	"2017-09-17T00:00:00.000Z",\
+    'Zuari@Seller',\
+        0.2,\
+        666,\
+        150\
+    );\
+  insert into products values(1014,\
+    "Recliner sofa set by Grihshobha",\
+    "A luxurious and comfortable sofa set by Grihshobha furniture makers",\
+     4.8,\
+    "Furniture",\
+    125000,\
+    "Dark grey",\
+    "Furniture.jpg",\
+    "",\
+	"2012-09-17T00:00:00.000Z",\
+	"2017-09-17T00:00:00.000Z",\
+    'Grihshobha@Seller',\
+        0.2,\
+        666,\
+        150\
+    );\
+  insert into products values(1015,\
+    "Dining table by @HOME",\
+    "Teak wood dining table with glass top",\
+     4.4,\
+    "Furniture",\
+    18999,\
+    "caramel",\
+    "Furniture.jpg",\
+    "",\
+	"2012-09-17T00:00:00.000Z",\
+	"2017-09-17T00:00:00.000Z",\
+    'HOME@Seller',\
+        0.2,\
+        666,\
+        150\
+    );\
+  insert into products values(1016,\
+    "Kurta Plazzo set ethnic for women",\
+    "embroidery work kurta plazzo set for women",\
+     4.0,\
+     "Clothing",\
+    1499,\
+    "Cyan",\
+    "Clothing.jpg",\
+    "",\
+	"2012-09-17T00:00:00.000Z",\
+	"2017-09-17T00:00:00.000Z",\
+    'Ethnic@Seller',\
+        0.2,\
+        666,\
+        150\
+    );\
+  insert into products values(1017,\
+    "Cotton silk saree by FabIndia",\
+    "cotton silk hand woven sarees by Fabindia",\
+     4.8,\
+     "Clothing",\
+    5900,\
+    "Red",\
+    "Clothing.jpg",\
+    "",\
+	"2012-09-17T00:00:00.000Z",\
+	"2017-09-17T00:00:00.000Z",\
+    'FabIndia@Seller',\
+        0.2,\
+        666,\
+        150\
+    );\
+  insert into products values(1018,\
+    "Modi coat for men ethnic",\
+    "Khadi cotton hand woven modi coat for men",\
+     4.8,\
+     "Clothing",\
+    1900,\
+    "yellow",\
+    "Clothing.jpg",\
+    "",\
+	"2012-09-17T00:00:00.000Z",\
+	"2017-09-17T00:00:00.000Z",\
+    'Ethnic@Seller',\
+        0.2,\
+        666,\
+        150\
+    );\
+  insert into products values(1019,\
+    "US Polo T-shirt",\
+    "100 % pure cotton t shirt by US polo",\
+     4.8,\
+    "Clothing",\
+    3299,\
+    "White",\
+    "Clothing.jpg",\
+    "",\
+	"2012-09-17T00:00:00.000Z",\
+	"2017-09-17T00:00:00.000Z",\
+    'USPolo@Seller',\
+        0.2,\
+        666,\
+        150\
+    );\
+  insert into products values(1020,\
+    "UCB T-shirt",\
+    "100 % pure cotton t shirt by UCB",\
+     4.2,\
+     "Clothing",\
+    1900,\
+    "Black",\
+    "Clothing.jpg",\
+    "",\
+	"2012-09-17T00:00:00.000Z",\
+	"2017-09-17T00:00:00.000Z",\
+    'UCB@Seller',\
+        0.2,\
+        666,\
+        150\
+    );\
+  \
+  \
+select * from products;\
+\
+\
+\
+\
+create database kart_cardinfo;\
+\
+use kart_cardinfo;\
+create table cardinfo(card_number bigint primary key not null,\
+email varchar(50),\
+name varchar(25),\
+month int,\
+year int);\
+\
+desc cardinfo;\
+\
+insert into cardinfo values("1234123412341234","Jack@gmail.com","Jack",1,2025);\
+insert into cardinfo values("8909876789095645","Joy@gmail.com","Joy",2,2020);\
+insert into cardinfo values("8766790098543212","John@gmail.com","John",3,2020);\
+insert into cardinfo values("8909876543456789","Tom@gmail.com","Tom",9,2020);\
+insert into cardinfo values("8909876543456789","Tim@gmail.com","Tim",1,2020);\
+\
+\
+\
+\
+\
+select * from cardinfo;\
+show tables;}
